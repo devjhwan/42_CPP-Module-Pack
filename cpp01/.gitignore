@@ -1,0 +1,10 @@
+**/objs/
+/.vscode/
+ex00/zombie
+ex01/zombieHorde
+ex02/brain
+ex03/noviolence
+ex04/replaceString
+ex04/*.replace
+ex05/shutUpHarl
+ex06/harlFilter
