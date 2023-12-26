@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 22:57:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:30:09 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:48:24 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &obj);
 		~ScavTrap(void);
 		ScavTrap	&operator=(const ScavTrap &obj);
 		void	attack(const std::string& target);

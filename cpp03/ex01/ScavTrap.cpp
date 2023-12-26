@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 22:57:55 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:33:53 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:49:58 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_attackDamage = 20;
 	this->_gateKeeperMode = false;
 	std::cout << "Upgrade to scavTrap " << this->_name << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &obj)
+{
+	this->_name = obj._name;
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
+	this->_gateKeeperMode = obj._gateKeeperMode;
+	std::cout << "Copy scavTrap " << this->_name << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)

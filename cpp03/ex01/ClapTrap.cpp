@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:19:36 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:33:47 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:47:33 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ ClapTrap::ClapTrap(std::string name)
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 	std::cout << "Create clapTrap " << this->_name << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &obj)
+{
+	this->_name = obj._name;
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
+	std::cout << "Copy clapTrap " << this->_name << std::endl;
 }
 ClapTrap::~ClapTrap()
 {

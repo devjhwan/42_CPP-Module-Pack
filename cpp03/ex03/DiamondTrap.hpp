@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 22:57:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:48:24 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/26 23:41:47 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/26 23:44:54 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-# include "ClapTrap.hpp"
-# include <string>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include <string>
 
-class ScavTrap : public ClapTrap
+class DiamondTrap: public ScavTrap, public FragTrap
 {
-	private:
-		bool	_gateKeeperMode;
-	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &obj);
-		~ScavTrap(void);
-		ScavTrap	&operator=(const ScavTrap &obj);
-		void	attack(const std::string& target);
-		void	guardGate();
-		void	setGateKeeperMode(bool mode);
+private:
+	std::string	_name;
+public:
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	~DiamondTrap();
+	DiamondTrap	&operator=(const DiamondTrap &obj);
 };
+
 
 #endif
