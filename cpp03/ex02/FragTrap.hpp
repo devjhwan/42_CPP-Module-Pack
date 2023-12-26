@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/24 22:19:30 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:28:02 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/26 23:21:06 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/26 23:38:09 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
+# include "ClapTrap.hpp"
 # include <string>
 
-class ClapTrap
+class FragTrap : public ClapTrap
 {
 	private:
-		std::string	_name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
 	public:
-		ClapTrap(void);
-		ClapTrap(std::string name);
-		~ClapTrap(void);
-		ClapTrap	&operator=(const ClapTrap &obj);
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		FragTrap(void);
+		FragTrap(std::string name);
+		~FragTrap();
+		FragTrap	&operator=(const FragTrap &obj);
+		void	highFivesGuys(void);
 };
 
 #endif

@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/26 22:53:47 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/26 23:38:00 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=
+NAME=fragTrap
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=
+SRCS=main.cpp ClapTrap.cpp FragTrap.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 

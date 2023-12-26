@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 22:57:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:30:09 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/24 22:19:19 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/26 23:37:52 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "FragTrap.hpp"
 
-# include "ClapTrap.hpp"
-# include <string>
-
-class ScavTrap : public ClapTrap
+int	main(void)
 {
-	private:
-		bool	_gateKeeperMode;
-	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		~ScavTrap(void);
-		ScavTrap	&operator=(const ScavTrap &obj);
-		void	attack(const std::string& target);
-		void	guardGate();
-		void	setGateKeeperMode(bool mode);
-};
-
-#endif
+	FragTrap fg("Bob");
+	fg.attack("Tom");
+	fg.takeDamage(42);
+	fg.beRepaired(38);
+	fg.takeDamage(100);
+	fg.attack("Tom");
+	fg.highFivesGuys();
+	return (0);
+}

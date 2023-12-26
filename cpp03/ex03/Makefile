@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/24 22:19:59 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/26 23:38:00 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=clapTrap
+NAME=fragTrap
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=main.cpp ClapTrap.cpp
+SRCS=main.cpp ClapTrap.cpp FragTrap.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
@@ -29,11 +29,11 @@ all: $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJS) Makefile
 	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o $@ $(OBJS) $(LIBRARIES)
-	echo "(CPP03-EX03)COMPILING $@"
+	echo "(CPP03-EX02)COMPILING $@"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp Makefile 
 	$(CC) $(DEPFLAGS) $(CFLAGS) $(EXTRAFLAGS) $(INCLUDE) -c -o $@ $<
-	echo "(CPP03-EX03)COMPILING $@"
+	echo "(CPP03-EX02)COMPILING $@"
 
 $(OBJDIR): Makefile
 	mkdir -p $@

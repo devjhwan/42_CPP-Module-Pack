@@ -6,11 +6,11 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/26 22:46:08 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/26 23:20:41 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=basicClapTrapAction
+NAME=clapTrap
 
 SRCDIR=.
 OBJDIR=objs
