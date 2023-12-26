@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/24 22:18:49 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/26 23:13:40 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=
+NAME=scavTrap
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=
+SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
