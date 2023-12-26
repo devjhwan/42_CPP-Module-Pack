@@ -6,20 +6,24 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:19:19 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:37:52 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 00:24:05 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	FragTrap fg("Bob");
-	fg.attack("Tom");
-	fg.takeDamage(42);
-	fg.beRepaired(38);
-	fg.takeDamage(100);
-	fg.attack("Tom");
-	fg.highFivesGuys();
+	DiamondTrap dd("Bob");
+	dd.attack("Tom");
+	dd.takeDamage(42);
+	dd.beRepaired(38);
+	dd.takeDamage(100);
+	dd.attack("Tom");
+	dd.guardGate();
+	dd.setGateKeeperMode(true);
+	dd.guardGate();
+	dd.highFivesGuys();
+	dd.whoAmI();
 	return (0);
 }

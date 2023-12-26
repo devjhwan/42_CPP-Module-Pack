@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 22:57:55 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:49:58 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 00:23:40 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "Upgrade to scavTrap " << this->_name << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &obj)
+ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
 	this->_name = obj._name;
 	this->_hitPoints = obj._hitPoints;

@@ -6,7 +6,7 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/26 23:38:00 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/27 00:19:20 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=fragTrap
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=main.cpp ClapTrap.cpp FragTrap.cpp
+SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 

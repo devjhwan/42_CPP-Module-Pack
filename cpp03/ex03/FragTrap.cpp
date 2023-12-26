@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 23:21:11 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/26 23:49:21 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 00:24:31 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << "Upgrade to fragTrap " << this->_name << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &obj)
+FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 {
 	this->_name = obj._name;
 	this->_hitPoints = obj._hitPoints;
@@ -55,5 +55,5 @@ FragTrap	&FragTrap::operator=(const FragTrap &obj)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << this->_name << "high five!" << std::endl;
+	std::cout << "FragTrap " << this->_name << " high five!" << std::endl;
 }
