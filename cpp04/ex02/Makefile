@@ -6,15 +6,15 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/27 12:41:59 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/27 16:08:47 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=
+NAME=ex02
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=
+SRCS=main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp 
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
