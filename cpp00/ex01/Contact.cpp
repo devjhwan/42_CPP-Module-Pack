@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 01:59:44 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/22 03:48:22 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:26:06 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ std::string	Contact::GetNickName(void)
 
 void	Contact::PrintContact(void)
 {
-	std::cout << "First Name: " << _firstName << '\n';
-	std::cout << "Last Name: " << _lastName << '\n';
-	std::cout << "Nick Name: " << _nickName << '\n';
-	std::cout << "Phone Number: " << _phoneNumber << '\n';
-	std::cout << "Darkest Secret: " << _darkestSecret << '\n';
+	std::cout << "First Name: " << _firstName << std::endl;
+	std::cout << "Last Name: " << _lastName << std::endl;
+	std::cout << "Nick Name: " << _nickName << std::endl;
+	std::cout << "Phone Number: " << _phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << _darkestSecret << std::endl;
 }

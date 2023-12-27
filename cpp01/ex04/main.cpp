@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 18:03:09 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/23 19:35:27 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:26:32 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static int	readAndReplaceString(std::ifstream &readFileStream, \
 	while (std::getline(readFileStream, line))
 	{
 		buffer += line;
-		buffer += '\n';
+		buffer += "\n";
 		if (s1len == 0)
 			continue ;
 		if (flushString(buffer, s1, s2, writeFileStream) == 1)

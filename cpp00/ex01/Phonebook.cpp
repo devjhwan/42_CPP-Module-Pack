@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 01:41:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/22 04:04:34 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:30:18 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	PhoneBook::AddContact(std::string firstName, std::string lastName, \
 	contactArr[curContactSize % 8] = Contact(firstName, lastName, nickName, \
 										phoneNumber, darkestSecret);
 	std::cout << "New contact added successfuly on index " << \
-					curContactSize % 8 + 1<< '\n';
+					curContactSize % 8 + 1<< std::endl;
 	curContactSize++;
 }
 
@@ -63,23 +63,10 @@ void	PhoneBook::DisplayContact(int index)
 
 static void	DisplayColumnString(std::string str)
 {
-	int	i;
-	int	len;
-
-	len = str.length();
-	if (str.length() > 10)
-	{
-		str[9] = '.';
-		str[10] = '\0';
-		std::cout << str;
-	}
+	if (str.size() > 10)
+		std::cout << str.substr(0, 9) + ".";
 	else
-	{
-		std::cout << str;
-		i = 0;
-		while (i++ < 10 - len)
-			std::cout << ' ';
-	}
+		std::cout << std::string(10 - str.size(), ' ') + str;
 }
 
 static void	DisplayRowString(std::string col1, std::string col2, \
@@ -94,5 +81,5 @@ static void	DisplayRowString(std::string col1, std::string col2, \
 	std::cout << '|';
 	DisplayColumnString(col4);
 	std::cout << '|';
-	std::cout << '\n';
+	std::cout << std::endl;
 }

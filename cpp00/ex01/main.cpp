@@ -6,13 +6,12 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 02:03:32 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/23 02:32:10 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:25:07 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include <cstdlib>
-#include <limits>
 
 static std::string	getUserInput(std::string prompt)
 {
@@ -20,6 +19,27 @@ static std::string	getUserInput(std::string prompt)
 
 	std::cout << prompt;
 	std::getline(std::cin, userInputStr);
+	return (userInputStr);
+}
+
+static std::string	getUserNumberInput(std::string prompt)
+{
+	std::string	userInputStr;
+	int			i;
+	bool		number;
+
+	number = false;
+	while (!std::cin.eof() && !number)
+	{
+		number = true;
+		std::cout << prompt;
+		std::getline(std::cin, userInputStr);
+		for (i = 0; userInputStr[i] != '\0'; i++)
+			if (userInputStr[i] < '0' || userInputStr[i] > '9')
+				number = false;
+		if (!number)
+			std::cout << "Expected noly digits" << std::endl;
+	}
 	return (userInputStr);
 }
 
@@ -31,18 +51,13 @@ static void	addContact(PhoneBook *phonebook)
 	std::string phoneNumber;
 	std::string darkestSecret;
 
-	while ((firstName = getUserInput("input > firstName > ")) == "" && \
-			!std::cin.eof());
-	while ((lastName = getUserInput("input > lastName > ")) == "" && \
-			!std::cin.eof());
-	while ((nickName = getUserInput("input > nickName > ")) == "" && \
-			!std::cin.eof());
-	while ((phoneNumber = getUserInput("input > phoneNumber > ")) == "" && \
-			!std::cin.eof());
-	while ((darkestSecret = getUserInput("input > darkestSecret > ")) == "" && \
-			!std::cin.eof());
-	phonebook->AddContact(firstName, lastName, nickName, \
-							phoneNumber, darkestSecret);
+	while (!std::cin.eof() && (firstName = getUserInput("input > firstName > ")) == "");
+	while (!std::cin.eof() && (lastName = getUserInput("input > lastName > ")) == "");
+	while (!std::cin.eof() && (nickName = getUserInput("input > nickName > ")) == "");
+	while (!std::cin.eof() && (phoneNumber = getUserNumberInput("input > phoneNumber > ")) == "");
+	while (!std::cin.eof() && (darkestSecret = getUserInput("input > darkestSecret > ")) == "");
+	if (!std::cin.eof())
+		phonebook->AddContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 }
 
 static bool	isNumber(std::string str)
@@ -71,20 +86,20 @@ static void	searchContact(PhoneBook phonebook)
 
 	phonebook.DisplayContactList();
 	contactArrSize = phonebook.GetContactArrSize();
-	while (contactArrSize > 0)
+	while (!std::cin.eof() && contactArrSize > 0)
 	{
 		input = getUserInput("input > index > ");
 		if (std::cin.eof())
 			break ;
 		if (!isNumber(input))
 		{
-			std::cout << "Write an valid number\n";
+			std::cout << "Write an valid number" << std::endl;
 			continue ;
 		}
 		index = std::atoi(input.c_str());
 		if (isOutOfRange(index, contactArrSize))
 		{
-			std::cout << "Out of range\n";
+			std::cout << "Out of range" << std::endl;
 			continue ;
 		}
 		break;
@@ -98,7 +113,7 @@ int	main(void)
 	PhoneBook	phonebook;
 	std::string	userInputStr;
 	
-	while (1)
+	while (!std::cin.eof())
 	{
 		userInputStr = getUserInput("input> ");
 		if (std::cin.eof())

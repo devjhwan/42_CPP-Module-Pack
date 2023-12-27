@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/22 01:15:43 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 14:25:26 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/27 12:46:25 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/27 13:11:05 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "WrongAnimal.hpp"
 #include <iostream>
 
-int	main(int argc, char **argv)
+WrongAnimal::WrongAnimal()
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; argv[i] != NULL; i++)
-			for (int j = 0; argv[i][j] != '\0'; j++)
-				std::cout << (char)std::toupper(argv[i][j]);
-	}
-	std::cout << std::endl;
-	return (0);
+	this->_type = "None";
+}
+WrongAnimal::WrongAnimal(const WrongAnimal &obj)
+{
+	*this = obj;
+}
+WrongAnimal::~WrongAnimal()
+{}
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &obj)
+{
+	this->_type = obj._type;
+	return (*this);
+}
+
+std::string	WrongAnimal::getType() const
+{
+	return (this->_type);
+}
+
+void	WrongAnimal::makeSound() const
+{
+	std::cout << "..." << std::endl;
 }

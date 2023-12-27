@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 02:45:06 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 14:26:54 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/27 13:30:33 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "WrongCat.hpp"
+#include <iostream>
 
-Zombie::Zombie(void)
+WrongCat::WrongCat()
+{
+	this->_type = "Wrong cat";
+}
+WrongCat::WrongCat(const WrongCat &obj)
+{
+	*this = obj;
+}
+WrongCat::~WrongCat()
 {}
-Zombie::Zombie(std::string name)
+WrongCat	&WrongCat::operator=(const WrongCat &obj)
 {
-	this->_name = name;
-	std::cout << "create: " << this->_name << std::endl;
-}
-Zombie::~Zombie(void)
-{
-	std::cout << "delete: " << this->_name << std::endl;
+	this->_type = obj._type;
+	return (*this);
 }
 
-void	Zombie::announce(void)
+void	WrongCat::makeSound() const
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void	Zombie::setName(std::string name)
-{
-	this->_name = name;
+	std::cout << "Maou?" << std::endl;
 }

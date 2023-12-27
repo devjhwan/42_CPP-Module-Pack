@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 02:45:06 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 14:26:54 by junghwle         ###   ########.fr       */
+/*   Created: 2023/12/27 12:46:25 by junghwle          #+#    #+#             */
+/*   Updated: 2023/12/27 13:02:20 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Animal.hpp"
+#include <iostream>
 
-Zombie::Zombie(void)
+Animal::Animal()
+{
+	this->_type = "None";
+}
+Animal::Animal(const Animal &obj)
+{
+	*this = obj;
+}
+Animal::~Animal()
 {}
-Zombie::Zombie(std::string name)
+Animal	&Animal::operator=(const Animal &obj)
 {
-	this->_name = name;
-	std::cout << "create: " << this->_name << std::endl;
-}
-Zombie::~Zombie(void)
-{
-	std::cout << "delete: " << this->_name << std::endl;
+	this->_type = obj._type;
+	return (*this);
 }
 
-void	Zombie::announce(void)
+std::string	Animal::getType() const
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return (this->_type);
 }
 
-void	Zombie::setName(std::string name)
+void	Animal::makeSound() const
 {
-	this->_name = name;
+	std::cout << "..." << std::endl;
 }
