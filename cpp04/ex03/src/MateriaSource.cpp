@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:09:52 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:46:59 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:56:21 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &obj)
 		for (int i = 0; i < 4; i++)
 		{
 			delete (this->_materiaSource[i]);
-			this->_materiaSource[i] = obj._materiaSource[i];
+			this->_materiaSource[i] = obj._materiaSource[i]->clone();
 		}
 	}
 	std::cout << "Copy MateriaSource" << std::endl;

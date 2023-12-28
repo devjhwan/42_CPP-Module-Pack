@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:49:02 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 19:36:25 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:17:15 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ class Character: public ICharacter
 		void				unequip(int idx);
 		void				use(int idx, ICharacter& target);
 		int					getMaterialCount();
+		int					findEmptySlotIdx();
 };
 #endif

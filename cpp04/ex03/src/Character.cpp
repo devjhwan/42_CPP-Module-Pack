@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:50:22 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:45:25 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:20:44 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,16 @@ std::string const	&Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	if (this->_materialCount == 4)
+	int	idx;
+	
+	if (this->_materialCount == 4 || (idx = findEmptySlotIdx()) == -1)
 	{
 		std::cout << "No space left in material slot" << std::endl;
 		delete (m);
 	}
-	else
-	{
-		this->_slots[this->_materialCount] = m;
-		std::cout << "Equip material to slot " << this->_materialCount << std::endl;
-		this->_materialCount++;
-	}
+	this->_slots[this->_materialCount] = m;
+	std::cout << "Equip material to slot " << this->_materialCount << std::endl;
+	this->_materialCount++;
 }
 
 void	Character::unequip(int idx)
@@ -81,7 +80,7 @@ void	Character::unequip(int idx)
 		std::cout << "Index out of range" <<std::endl;
 	else if (this->_materialCount == 0)
 		std::cout << "Empty material slot" << std::endl;
-	else if (idx >= 0 && idx <= 3 && idx >= this->_materialCount)
+	else if (this->_slots[idx] == NULL)
 		std::cout << "Selected Index is an empty slot" << std::endl;
 	else
 	{
@@ -104,4 +103,14 @@ void	Character::use(int idx, ICharacter& target)
 int	Character::getMaterialCount()
 {
 	return (this->_materialCount);
+}
+
+int	Character::findEmptySlotIdx()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_slots[i] == NULL)
+			return (i);
+	}
+	return (-1);
 }
