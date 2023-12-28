@@ -6,11 +6,11 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/27 19:48:47 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/28 15:14:42 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=ex04
+NAME=ex03
 
 SRCDIR=./src
 OBJDIR=objs

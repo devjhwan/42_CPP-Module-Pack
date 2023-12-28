@@ -6,13 +6,16 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:38:58 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 19:59:19 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:01:05 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
+class ICharacter;
+
+# include "AMateria.hpp"
 # include <string>
 
 class ICharacter

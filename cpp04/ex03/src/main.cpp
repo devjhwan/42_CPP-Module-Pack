@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:37:29 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 19:34:16 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:14:22 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include <iostream>
 
 int main()
 {

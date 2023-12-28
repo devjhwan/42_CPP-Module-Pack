@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:50:22 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 19:53:13 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:02:45 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Character::Character()
 	this->_materialCount = 0;
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
+	std::cout << "Create " << this->_name << std::endl;
 }
 Character::Character(std::string const &name)
 {
@@ -27,6 +28,7 @@ Character::Character(std::string const &name)
 	this->_materialCount = 0;
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = NULL;
+	std::cout << "Create " << this->_name << std::endl;
 }
 Character::Character(const Character &obj)
 {
@@ -36,6 +38,7 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 		delete(this->_slots[i]);
+	std::cout << "Delete " << this->_name << std::endl;
 }
 Character	&Character::operator=(const Character &obj)
 {

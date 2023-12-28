@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:09:52 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 19:47:06 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:10:15 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ MateriaSource::MateriaSource()
 	this->_sourceCount = 0;
 	for (int i = 0; i < 4; i++)
 		this->_materiaSource[i] = NULL;
+	std::cout << "Create MateriaSource" << std::endl;
 }
 MateriaSource::MateriaSource(const MateriaSource &obj)
 {
@@ -29,6 +30,7 @@ MateriaSource::~MateriaSource()
 	this->_sourceCount = 0;
 	for (int i = 0; i < 4; i++)
 		delete (this->_materiaSource[i]);
+	std::cout << "Delete MateriaSource" << std::endl;
 }
 MateriaSource	&MateriaSource::operator=(const MateriaSource &obj)
 {
@@ -38,6 +40,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &obj)
 		delete (this->_materiaSource[i]);
 		this->_materiaSource[i] = obj._materiaSource[i];
 	}
+	std::cout << "Copy MateriaSource" << std::endl;
 	return (*this);
 }
 
@@ -46,7 +49,10 @@ void			MateriaSource::learnMateria(AMateria *m)
 	if (this->_sourceCount == 4)
 		std::cout << "Can't memorize more materials" << std::endl;
 	else
+	{
+		std::cout << "Learned " << m->getType() << std::endl;
 		this->_materiaSource[this->_sourceCount++] = m;
+	}
 }
 
 AMateria		*MateriaSource::createMateria(std::string const &type)
@@ -65,5 +71,5 @@ AMateria		*MateriaSource::createMateria(std::string const &type)
 	if (pos == -1)
 		return (NULL);
 	else
-		return (this->_materiaSource[pos]);
+		return (this->_materiaSource[pos]->clone());
 }
