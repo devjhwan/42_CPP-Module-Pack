@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:43:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 16:05:30 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:39:49 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal
 	protected:
 		std::string	_type;
 	public:
-		virtual	~Animal();
+		virtual	~Animal() {}
 		virtual std::string		getType() const = 0;
 		virtual void			makeSound() const = 0;
 };
