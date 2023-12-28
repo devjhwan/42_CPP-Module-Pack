@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 15:45:34 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 15:56:00 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:48:03 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Brain::~Brain()
 }
 Brain	&Brain::operator=(const Brain &obj)
 {
-	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = obj._ideas[i];
+	if (this != &obj)
+	{
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = obj._ideas[i];
+	}
 	return (*this);
 }

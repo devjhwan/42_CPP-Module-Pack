@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:46:25 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 13:11:05 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:49:59 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ WrongAnimal::~WrongAnimal()
 {}
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &obj)
 {
-	this->_type = obj._type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 

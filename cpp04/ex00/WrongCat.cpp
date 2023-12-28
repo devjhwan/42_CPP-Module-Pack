@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 13:30:33 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:50:01 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ WrongCat::~WrongCat()
 {}
 WrongCat	&WrongCat::operator=(const WrongCat &obj)
 {
-	this->_type = obj._type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 

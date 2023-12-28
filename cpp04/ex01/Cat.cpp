@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 15:58:03 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:49:17 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ Cat::~Cat()
 }
 Cat	&Cat::operator=(const Cat &obj)
 {
-	this->_type = obj._type;
-	this->_brain = obj._brain;
+	if (this != &obj)
+	{
+		this->_type = obj._type;
+		this->_brain = obj._brain;
+	}
 	return (*this);
 }
 
