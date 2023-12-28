@@ -6,19 +6,19 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/27 12:42:04 by junghwle         ###   ########.fr        #
+#    Updated: 2023/12/27 19:48:47 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=
+NAME=ex04
 
-SRCDIR=.
+SRCDIR=./src
 OBJDIR=objs
-SRCS=
+SRCS=main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
-INCLUDE=-I.
+INCLUDE=-I./inc
 CC=g++
 CFLAGS=-Wall -Werror -Wextra
 DEPFLAGS=-MMD
