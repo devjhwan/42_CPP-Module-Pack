@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 02:03:32 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 14:25:07 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:19:03 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static std::string	getUserInput(std::string prompt)
 	return (userInputStr);
 }
 
-static std::string	getUserNumberInput(std::string prompt)
+static std::string	getPhoneNumberUserInput(std::string prompt)
 {
 	std::string	userInputStr;
 	int			i;
@@ -34,11 +34,15 @@ static std::string	getUserNumberInput(std::string prompt)
 		number = true;
 		std::cout << prompt;
 		std::getline(std::cin, userInputStr);
-		for (i = 0; userInputStr[i] != '\0'; i++)
-			if (userInputStr[i] < '0' || userInputStr[i] > '9')
+		i = 0;
+		if (userInputStr[i] == '+')
+			i++;
+		for (; userInputStr[i] != '\0'; i++)
+			if ((userInputStr[i] < '0' || userInputStr[i] > '9') && \
+				userInputStr[i] != ' ')
 				number = false;
 		if (!number)
-			std::cout << "Expected noly digits" << std::endl;
+			std::cout << "Expected valid phone number" << std::endl;
 	}
 	return (userInputStr);
 }
@@ -54,7 +58,7 @@ static void	addContact(PhoneBook *phonebook)
 	while (!std::cin.eof() && (firstName = getUserInput("input > firstName > ")) == "");
 	while (!std::cin.eof() && (lastName = getUserInput("input > lastName > ")) == "");
 	while (!std::cin.eof() && (nickName = getUserInput("input > nickName > ")) == "");
-	while (!std::cin.eof() && (phoneNumber = getUserNumberInput("input > phoneNumber > ")) == "");
+	while (!std::cin.eof() && (phoneNumber = getPhoneNumberUserInput("input > phoneNumber > ")) == "");
 	while (!std::cin.eof() && (darkestSecret = getUserInput("input > darkestSecret > ")) == "");
 	if (!std::cin.eof())
 		phonebook->AddContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
@@ -124,5 +128,9 @@ int	main(void)
 			searchContact(phonebook);
 		else if (userInputStr == "EXIT")
 			break ;
+		else if (userInputStr == "")
+			continue ;
+		else
+			std::cout << "Available command: 'ADD' 'SEARCH' 'EXIT'" << std::endl;
 	}
 }
