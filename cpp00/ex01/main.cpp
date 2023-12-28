@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 02:03:32 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 14:19:03 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:29:45 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static void	searchContact(PhoneBook phonebook)
 			continue ;
 		}
 		index = std::atoi(input.c_str());
-		if (isOutOfRange(index, contactArrSize))
+		if (isOutOfRange(index, 8) || isOutOfRange(index, contactArrSize))
 		{
 			std::cout << "Out of range" << std::endl;
 			continue ;
