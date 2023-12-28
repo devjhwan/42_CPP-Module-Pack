@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:52:44 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 17:12:27 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:05:43 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ void	MateriaList::setNext(AMateria *m)
 }
 
 Floor::Floor(): _materiaList(NULL)
-{}
+{
+	std::cout << "Create Floor" << std::endl;
+}
 Floor::Floor(const Floor &obj)
 {
 	*this = obj;
@@ -53,6 +55,7 @@ Floor::Floor(const Floor &obj)
 Floor::~Floor()
 {
 	clearMateriaList();
+	std::cout << "Delete Floor" << std::endl;
 }
 Floor	&Floor::operator=(const Floor &obj)
 {
@@ -60,6 +63,7 @@ Floor	&Floor::operator=(const Floor &obj)
 	{
 		clearMateriaList();
 		this->_materiaList = obj._materiaList;
+		std::cout << "Copy Floor" << std::endl;
 	}
 	return (*this);
 }

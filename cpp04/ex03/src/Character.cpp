@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:50:22 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 17:08:47 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:07:07 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	Character::equip(AMateria* m)
 	}
 	else
 	{
-		this->_slots[this->_materialCount] = m;
+		this->_slots[idx] = m;
 		std::cout << "Equip material to slot " << this->_materialCount << std::endl;
 		this->_materialCount++;
 	}
