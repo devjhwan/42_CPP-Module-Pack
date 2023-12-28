@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:56:38 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:08:20 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:46:07 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Cure::~Cure()
 {}
 Cure	&Cure::operator=(const Cure &obj)
 {
-	(std::string)this->_type = obj._type;
+	if (this != &obj)
+		(std::string)(AMateria::_type) = obj._type;
 	return (*this);
 }
 

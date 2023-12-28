@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:09:52 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:10:15 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:46:59 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ MateriaSource::~MateriaSource()
 }
 MateriaSource	&MateriaSource::operator=(const MateriaSource &obj)
 {
-	this->_sourceCount = obj._sourceCount;
-	for (int i = 0; i < 4; i++)
+	if (this != &obj)
 	{
-		delete (this->_materiaSource[i]);
-		this->_materiaSource[i] = obj._materiaSource[i];
+		this->_sourceCount = obj._sourceCount;
+		for (int i = 0; i < 4; i++)
+		{
+			delete (this->_materiaSource[i]);
+			this->_materiaSource[i] = obj._materiaSource[i];
+		}
 	}
 	std::cout << "Copy MateriaSource" << std::endl;
 	return (*this);
@@ -47,7 +50,10 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &obj)
 void			MateriaSource::learnMateria(AMateria *m)
 {
 	if (this->_sourceCount == 4)
+	{
 		std::cout << "Can't memorize more materials" << std::endl;
+		delete (m);
+	}
 	else
 	{
 		std::cout << "Learned " << m->getType() << std::endl;

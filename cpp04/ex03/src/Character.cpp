@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:50:22 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:02:45 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:45:25 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ Character::~Character()
 }
 Character	&Character::operator=(const Character &obj)
 {
-	this->_name = obj._name;
-	this->_materialCount = obj._materialCount;
-	for (int i = 0; i < 4; i++)
+	if (this != &obj)
 	{
-		delete(this->_slots[i]);
-		this->_slots[i] = obj._slots[i];
+		this->_name = obj._name;
+		this->_materialCount = obj._materialCount;
+		for (int i = 0; i < 4; i++)
+		{
+			delete(this->_slots[i]);
+			this->_slots[i] = obj._slots[i];
+		}
 	}
 	return (*this);
 }
@@ -60,7 +63,10 @@ std::string const	&Character::getName() const
 void	Character::equip(AMateria* m)
 {
 	if (this->_materialCount == 4)
+	{
 		std::cout << "No space left in material slot" << std::endl;
+		delete (m);
+	}
 	else
 	{
 		this->_slots[this->_materialCount] = m;
