@@ -6,20 +6,22 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:49:02 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 16:17:15 by junghwle         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:07:58 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
+# include "Floor.hpp"
 # include <ICharacter.hpp>
 # include <string>
 
 class Character: public ICharacter
 {
 	private:
-		int	_materialCount;
+		int		_materialCount;
+		Floor	*_floor;
 	public:
 		Character();
 		Character(std::string const &name);
