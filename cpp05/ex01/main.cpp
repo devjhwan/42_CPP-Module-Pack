@@ -6,11 +6,11 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:17:44 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:44:35 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 00:41:14 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <string>
 #include <iostream>
 
@@ -21,46 +21,53 @@
 int	main(void) {
 	std::cout << YELLOW << "Try 1" << COLOR_OFF << std::endl;
 	try {
-        Bureaucrat highGrade("Alice", 0);
-        std::cout << highGrade << std::endl;
-    } catch (const std::exception& e) {
+		Form form("doc1", false, 0, 0);
+		std::cout << form << std::endl;
+	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
-    }
+	}
 	std::cout << std::endl;
 	std::cout << YELLOW << "Try 2" << COLOR_OFF << std::endl;
-    try {
-        Bureaucrat lowGrade("Bob", 151);
-        std::cout << lowGrade << std::endl;
-    } catch (const std::exception& e) {
+	try {
+		Form form("doc2", false, 200, 200);
+		std::cout << form << std::endl;
+	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
-    }
+	}
 	std::cout << std::endl;
 	std::cout << YELLOW << "Try 3" << COLOR_OFF << std::endl;
-    try {
-        Bureaucrat normalGrade("Charlie", 75);
-        std::cout << normalGrade << std::endl;
-    } catch (const std::exception& e) {
+	try {
+		Form form("doc3", false, 75, 75);
+		std::cout << form << std::endl;
+	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
-    }
+	}
 	std::cout << std::endl;
 	std::cout << YELLOW << "Try 4" << COLOR_OFF << std::endl;
 	try {
-        Bureaucrat increaseGrade("Peter", 3);
-        std::cout << increaseGrade << std::endl;
-		for (int i = 0; i < 5; i++)
-			increaseGrade.increaseGrade();
+		Form form("doc4", false, 20, 10);
+		Bureaucrat ferran("Ferran", 30);
+		
+		std::cout << form << std::endl;
+		std::cout << ferran << std::endl << std::endl;
+		form.beSigned(ferran);
+		std::cout << form << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
-    }
+	}
 	std::cout << std::endl;
 	std::cout << YELLOW << "Try 5" << COLOR_OFF << std::endl;
 	try {
-        Bureaucrat decreaseGrade("Temmy", 149);
-        	std::cout << decreaseGrade << std::endl;
-		for (int i = 0; i < 5; i++)
-			decreaseGrade.decreaseGrade();
+		Form form("doc5", false, 50, 10);
+		Bureaucrat camila("Camila", 30);
+		
+		std::cout << form << std::endl;
+		std::cout << camila << std::endl << std::endl;
+		form.beSigned(camila);
+		std::cout << std::endl;
+		std::cout << form << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
-    }
+	}
     return 0;
 }

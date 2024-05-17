@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:15:21 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:42:43 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 00:42:50 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,18 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj) {
 	this->_grade = obj._grade;
 	std::cout << "Copy " << this->_name << std::endl;
 	return (*this);
+}
+
+bool	Bureaucrat::signForm(Form &form) const {
+	if (this->getGrade() < form.getMinGradeSign()) {
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		return true;
+	}
+	else {
+		std::cout << this->getName() << " couldn’t sign " << form.getName();
+		std::cout << " because grade is too low" << std::endl;
+		return false;
+	}
 }
 
 std::string	Bureaucrat::getName() const {
