@@ -6,12 +6,13 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:49:29 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:07:38 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include <iostream>
+#include <stdio.h>
 
 Dog::Dog()
 {
@@ -33,7 +34,7 @@ Dog	&Dog::operator=(const Dog &obj)
 	if (this != &obj)
 	{
 		this->_type = obj._type;
-		this->_brain = obj._brain;
+		this->_brain = new Brain(*(obj._brain));
 	}
 	return (*this);
 }

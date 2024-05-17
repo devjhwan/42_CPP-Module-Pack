@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:37:29 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 19:07:18 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:12:58 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 int main()
 {
+	std::cout << "Create new MateriaSource and fill materias" << std::endl; 
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -27,21 +28,17 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+
+	std::cout << std::endl << "Create character me and fill skill slots" << std::endl;
 	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
+	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
+	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
 	
+	std::cout << std::endl << "Create character bob and use skill to him" << std::endl;
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
@@ -50,23 +47,23 @@ int main()
 	me->use(4, *bob);
 	me->use(-1, *bob);
 
+	std::cout << std::endl << "Try to unequip and equip slots" << std::endl;
 	me->unequip(0);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	me->equip(src->createMateria("ice"));
+	me->unequip(2);
+	me->equip(src->createMateria("ice"));
 	me->unequip(0);
 	me->unequip(1);
 	me->unequip(2);
 	me->unequip(3);
 	
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	
+	std::cout << std::endl << "Reequip all slots before deleting it. (Check floor)" << std::endl;
+	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
+	me->equip(src->createMateria("ice"));
+	me->equip(src->createMateria("cure"));
+
+	std::cout << std::endl << "Delete all objects" << std::endl;
 	delete (bob);
 	delete (me);
 	delete (src);

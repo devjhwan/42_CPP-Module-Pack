@@ -6,7 +6,7 @@
 #    By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 14:32:42 by junghwle          #+#    #+#              #
-#    Updated: 2023/12/27 13:12:55 by junghwle         ###   ########.fr        #
+#    Updated: 2024/03/28 14:37:09 by junghwle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
 INCLUDE=-I.
-CC=g++
+CC=c++
 CFLAGS=-Wall -Werror -Wextra
 DEPFLAGS=-MMD
 EXTRAFLAGS=-std=c++98

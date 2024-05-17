@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:48:30 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:39:48 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Dog	&Dog::operator=(const Dog &obj)
 	if (this != &obj)
 	{
 		this->_type = obj._type;
-		this->_brain = obj._brain;
+		this->_brain = new Brain(*(obj._brain));
 	}
 	return (*this);
 }

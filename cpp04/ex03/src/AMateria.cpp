@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:41:24 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:46:18 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 17:03:46 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ AMateria	&AMateria::operator=(const AMateria &obj)
 {
 	if (this != &obj)
 	{
-		(std::string)(this->_type) = obj._type;
+		const_cast<std::string&>(this->_type) = obj._type;
 		std::cout << "Copy " << this->_type << " materia" << std::endl;
 	}
 	return (*this);

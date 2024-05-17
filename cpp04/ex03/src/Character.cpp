@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:50:22 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 19:07:07 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 17:04:19 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ Character::Character(const Character &obj)
 }
 Character::~Character()
 {
+	std::cout << "Clear " << this->_name << "'s slot" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete(this->_slots[i]);
 	delete(this->_floor);
@@ -52,10 +53,13 @@ Character	&Character::operator=(const Character &obj)
 		for (int i = 0; i < 4; i++)
 		{
 			delete(this->_slots[i]);
-			this->_slots[i] = obj._slots[i];
+			if (obj._slots[i] != nullptr)
+				this->_slots[i] = obj._slots[i]->clone();
+			else
+				this->_slots[i] = nullptr;
 		}
 		delete(this->_floor);
-		this->_floor = obj._floor;
+		this->_floor = new Floor(*(obj._floor));
 	}
 	return (*this);
 }
@@ -77,7 +81,7 @@ void	Character::equip(AMateria* m)
 	else
 	{
 		this->_slots[idx] = m;
-		std::cout << "Equip material to slot " << this->_materialCount << std::endl;
+		std::cout << "Equip material to slot " << idx << std::endl;
 		this->_materialCount++;
 	}
 }
@@ -103,7 +107,7 @@ void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3)
 		std::cout << "Slot out of range" << std::endl;
-	else if (idx >= this->_materialCount)
+	else if (this->_slots[idx] == NULL)
 		std::cout << "Slot " << idx << " is empty." << std::endl;
 	else
 		this->_slots[idx]->use(target);

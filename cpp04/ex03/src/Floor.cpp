@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:52:44 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 19:05:43 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:14:55 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ MateriaList	&MateriaList::operator=(const MateriaList &obj)
 {
 	if (this != &obj)
 	{
-		delete (this->_m);
-		this->_m = obj._m;
-		this->_next = obj._next;
+		this->_m = obj._m->clone();
+		this->_next = new MateriaList(*(obj._next));
 	}
 	return (*this);
 }
@@ -62,7 +61,7 @@ Floor	&Floor::operator=(const Floor &obj)
 	if (this != &obj)
 	{
 		clearMateriaList();
-		this->_materiaList = obj._materiaList;
+		this->_materiaList = new MateriaList(*(obj._materiaList));
 		std::cout << "Copy Floor" << std::endl;
 	}
 	return (*this);
@@ -80,15 +79,16 @@ void	Floor::placeMateria(AMateria *m)
 			tmpNode = tmpNode->getNext();
 		tmpNode->setNext(m);
 	}
+	std::cout << "Materia " << m->getType() << " placed to floor" << std::endl;
 }
 void	Floor::clearMateriaList()
 {
 	MateriaList	*delNode;
 
+	std::cout << "Clear Floor" << std::endl;
 	while ((delNode = this->_materiaList) != NULL)
 	{
 		this->_materiaList = delNode->getNext();
 		delete (delNode);
 	}
-	std::cout << "clearFloor" << std::endl;
 }

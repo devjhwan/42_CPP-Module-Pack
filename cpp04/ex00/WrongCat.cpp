@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:50:01 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:57:18 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 WrongCat::WrongCat()
 {
 	this->_type = "Wrong cat";
+	std::cout << "Create Wrong cat" << std::endl;
 }
 WrongCat::WrongCat(const WrongCat &obj)
 {
 	*this = obj;
 }
 WrongCat::~WrongCat()
-{}
+{
+	std::cout << "Destroy WronCat" << std::endl;
+}
 WrongCat	&WrongCat::operator=(const WrongCat &obj)
 {
 	if (this != &obj)

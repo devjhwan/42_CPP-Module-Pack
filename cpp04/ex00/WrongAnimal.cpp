@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:46:25 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:49:59 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:57:49 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 WrongAnimal::WrongAnimal()
 {
 	this->_type = "None";
+	std::cout << "Create Wrong Animal" << std::endl;
 }
 WrongAnimal::WrongAnimal(const WrongAnimal &obj)
 {
 	*this = obj;
 }
 WrongAnimal::~WrongAnimal()
-{}
+{
+	std::cout << "Destroy Wrong Animal" << std::endl;
+}
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &obj)
 {
 	if (this != &obj)

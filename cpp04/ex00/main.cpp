@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:59:04 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 13:31:21 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:10:41 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,28 @@
 
 int main()
 {
+	std::cout << "Create different type of animals" << std::endl;
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal * wrong = new WrongCat();
-	std::cout << "Type: " << j->getType() << " " << std::endl;
-	std::cout << "Type: " << i->getType() << " " << std::endl;
-	std::cout << "Type: " << wrong->getType() << " " << std::endl;
-	std::cout << i->getType() << " says ";
-	i->makeSound();
-	std::cout << j->getType() << " says ";
-	j->makeSound();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
+	const WrongAnimal * wrongcat = new WrongCat();
+	std::cout << "Type: " << meta->getType() << " " << std::endl;
+	std::cout << "Type: " << dog->getType() << " " << std::endl;
+	std::cout << "Type: " << cat->getType() << " " << std::endl;
+	std::cout << "Type: " << wrongcat->getType() << " " << std::endl;
+	std::cout << std::endl << "Make sounds" << std::endl;
 	std::cout << meta->getType() << " says ";
 	meta->makeSound();
-	std::cout << wrong->getType() << " says ";
-	wrong->makeSound();
+	std::cout << cat->getType() << " says ";
+	cat->makeSound();
+	std::cout << dog->getType() << " says ";
+	dog->makeSound();
+	std::cout << wrongcat->getType() << " says ";
+	wrongcat->makeSound();
+	std::cout << std::endl << "Delete animals" << std::endl;
 	delete (meta);
-	delete (i);
-	delete (j);
-	delete (wrong);
+	delete (cat);
+	delete (dog);
+	delete (wrongcat);
 	return 0;
 }

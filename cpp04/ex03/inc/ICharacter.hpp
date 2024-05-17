@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:38:58 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:01:05 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 17:01:06 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ class ICharacter;
 
 class ICharacter
 {
-	protected:
-		std::string	_name;
-		AMateria	*_slots[4];
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;

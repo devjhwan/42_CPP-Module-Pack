@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:43:47 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/27 13:10:50 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:56:15 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		virtual ~WrongAnimal();
 		WrongAnimal			&operator=(const WrongAnimal &obj);
 		std::string		getType() const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 #endif

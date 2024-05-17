@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:51:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:49:51 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:56:54 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 Cat::Cat()
 {
 	this->_type = "Cat";
+	std::cout << "Create Cat" << std::endl;
 }
 Cat::Cat(const Cat &obj)
 {
 	*this = obj;
 }
 Cat::~Cat()
-{}
+{
+	std::cout << "Destroy Cat" << std::endl;
+}
 Cat	&Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)

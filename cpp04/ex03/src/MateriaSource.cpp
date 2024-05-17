@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:09:52 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/28 15:56:21 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:13:51 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ MateriaSource::MateriaSource(const MateriaSource &obj)
 }
 MateriaSource::~MateriaSource()
 {
+	std::cout << "Clear MateriaSource" << std::endl;
 	this->_sourceCount = 0;
 	for (int i = 0; i < 4; i++)
 		delete (this->_materiaSource[i]);
@@ -63,19 +64,14 @@ void			MateriaSource::learnMateria(AMateria *m)
 
 AMateria		*MateriaSource::createMateria(std::string const &type)
 {
-	int	pos;
 	int	i;
 
-	pos = -1;
 	i = 0;
-	while (pos == -1 && i < 4 && this->_materiaSource[i] != NULL)
+	while (i < 4 && this->_materiaSource[i] != NULL)
 	{
 		if (this->_materiaSource[i]->getType() == type)
-			pos = i;
+			return (this->_materiaSource[i]->clone());
 		i++;
 	}
-	if (pos == -1)
-		return (NULL);
-	else
-		return (this->_materiaSource[pos]->clone());
+	return (NULL);
 }
