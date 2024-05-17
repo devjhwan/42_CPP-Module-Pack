@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 00:21:18 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/24 01:28:49 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:01:10 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed a(10);
+	Fixed b(5);
 
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
@@ -25,5 +25,7 @@ int	main(void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << ((a < b) ? ("a > b") : ("b > a")) << std::endl;
+	std::cout << a * b << std::endl;
 	return (0);
 }

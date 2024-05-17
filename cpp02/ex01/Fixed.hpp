@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 00:21:26 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/24 01:07:58 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:40:15 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ public:
 	Fixed(const float raw);
 	Fixed(const Fixed &obj);
 	~Fixed(void);
-	Fixed				&operator=(const Fixed &obj);
-	friend std::ostream	&operator<<(std::ostream &os, const Fixed &obj);
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
-	int					toInt(void) const;
-	float				toFloat(void) const;
+	Fixed	&operator=(const Fixed &obj);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+	int		toInt(void) const;
+	float	toFloat(void) const;
 };
 
+std::ostream	&operator<<(std::ostream &os, const Fixed &obj);
 #endif

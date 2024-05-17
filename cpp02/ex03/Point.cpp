@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 01:38:43 by junghwle          #+#    #+#             */
-/*   Updated: 2023/12/24 03:21:04 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:27:15 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Point::~Point(void)
 
 std::ostream	&operator<<(std::ostream &os, const Point &obj)
 {
-	os << "(" << obj.x << ", " << obj.y << ")";
+	os << "(" << obj.getX() << ", " << obj.getY() << ")";
 	return (os);
 }
 
