@@ -6,12 +6,16 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:15:21 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:42:50 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 02:03:24 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <exception>
+
+#define RED "\033[1;31m"
+#define COLOR_OFF "\033[0m"
 
 Bureaucrat::Bureaucrat(): _name("Default") {
 	setGrade(1);
@@ -31,21 +35,23 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "Delete " << this->_name << std::endl;
 }
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj) {
-	(std::string)this->_name = obj._name;
-	this->_grade = obj._grade;
-	std::cout << "Copy " << this->_name << std::endl;
+	if (this != &obj) {
+		(std::string)this->_name = obj._name;
+		this->_grade = obj._grade;
+		std::cout << "Copy " << this->_name << std::endl;
+	}
 	return (*this);
 }
 
-bool	Bureaucrat::signForm(Form &form) const {
-	if (this->getGrade() < form.getMinGradeSign()) {
+void	Bureaucrat::signForm(Form &form) const {
+	try {
+		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
-		return true;
-	}
-	else {
-		std::cout << this->getName() << " couldn’t sign " << form.getName();
-		std::cout << " because grade is too low" << std::endl;
-		return false;
+	} catch (const std::exception &e) {
+		std::cerr << RED;
+		std::cerr << this->getName() << " couldn't sign " << form.getName();
+		std::cerr << " because " << e.what() << std::endl;
+		std::cerr << COLOR_OFF;
 	}
 }
 

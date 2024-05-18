@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:15:21 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:42:43 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 02:03:28 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "Delete " << this->_name << std::endl;
 }
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj) {
-	(std::string)this->_name = obj._name;
-	this->_grade = obj._grade;
-	std::cout << "Copy " << this->_name << std::endl;
+	if (this != &obj) {
+		(std::string)this->_name = obj._name;
+		this->_grade = obj._grade;
+		std::cout << "Copy " << this->_name << std::endl;
+	}
 	return (*this);
 }
 

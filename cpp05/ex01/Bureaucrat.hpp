@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:12:51 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:16:31 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 01:12:41 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Bureaucrat {
 		virtual ~Bureaucrat();
 		Bureaucrat	&operator=(const Bureaucrat &obj);
 
-		bool		signForm(Form &form) const;
+		void		signForm(Form &form) const;
 
 		std::string	getName() const;
 		int			getGrade() const;

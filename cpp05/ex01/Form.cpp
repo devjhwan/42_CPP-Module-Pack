@@ -27,25 +27,22 @@ Form::~Form() {
 }
 
 Form	&Form::operator=(const Form &obj) {
-	(std::string)this->_name = obj.getName();
-	this->_signed = obj.isSigned();
-	*(int *)(&this->_min_grade_sign) = obj.getMinGradeSign();
-	*(int *)(&this->_min_grade_exec) = obj.getMinGradeExec();
-	std::cout << "Copy Form " << std::endl;
+	if (this != &obj) {
+		(std::string)this->_name = obj.getName();
+		this->_signed = obj.isSigned();
+		*(int *)(&this->_min_grade_sign) = obj.getMinGradeSign();
+		*(int *)(&this->_min_grade_exec) = obj.getMinGradeExec();
+		std::cout << "Copy Form " << std::endl;
+	}
 	return (*this);
 }
 
 void	Form::beSigned(const Bureaucrat &bureaucrat) {
-	if (bureaucrat.signForm(*this))
+	if (bureaucrat.getGrade() <= this->getMinGradeSign())
 		this->_signed = true;
 	else
 		throw Form::GradeTooLowException();
 }
-
-// std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl; else {
-// 		std::cout << bureaucrat.getName() << " couldn’t sign " << this->getName();
-// 		std::cout << " because grade is too low" << std::endl;
-// 	}
 
 std::string	Form::getName() const {
 	return this->_name;

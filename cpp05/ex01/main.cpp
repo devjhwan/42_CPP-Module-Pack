@@ -6,11 +6,12 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:17:44 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:41:14 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 01:29:59 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
 
@@ -50,7 +51,8 @@ int	main(void) {
 		
 		std::cout << form << std::endl;
 		std::cout << ferran << std::endl << std::endl;
-		form.beSigned(ferran);
+		ferran.signForm(form);
+		std::cout << std::endl;
 		std::cout << form << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << COLOR_OFF << std::endl;
@@ -63,7 +65,7 @@ int	main(void) {
 		
 		std::cout << form << std::endl;
 		std::cout << camila << std::endl << std::endl;
-		form.beSigned(camila);
+		camila.signForm(form);
 		std::cout << std::endl;
 		std::cout << form << std::endl;
 	} catch (const std::exception& e) {

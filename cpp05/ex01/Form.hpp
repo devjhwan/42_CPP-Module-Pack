@@ -6,7 +6,7 @@
 /*   By: junghwle <junghwle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 20:08:16 by junghwle          #+#    #+#             */
-/*   Updated: 2024/05/18 00:12:15 by junghwle         ###   ########.fr       */
+/*   Updated: 2024/05/18 01:26:23 by junghwle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ class Form{
 		class GradeTooHighException: public std::exception {
 			public:
 			const char* what() const throw() {
-				return "Too high grade";
+				return "grade is too high";
 			}
 		};
 		class GradeTooLowException: public std::exception {
 			public:
 			const char* what() const throw() {
-				return "Too low grade";
+				return "grade is too low";
 			}
 		};
 	private:
