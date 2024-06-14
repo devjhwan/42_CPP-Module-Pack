@@ -26,6 +26,7 @@ int	main(void) {
 	AForm *form2 = new RobotomyRequestForm("Schrodinger");
 	AForm *form3 = new PresidentialPardonForm("Devil Cat");
 	{
+		std::cout << YELLOW << "Try 1, Asier 140" << COLOR_OFF << std::endl;
 		Bureaucrat asier("Asier", 140);
 		asier.signForm(*form1);
 		asier.executeForm(*form1);
@@ -34,7 +35,9 @@ int	main(void) {
 		asier.signForm(*form3);
 		asier.executeForm(*form3);
 	}
+	std::cout << std::endl;
 	{
+		std::cout << YELLOW << "Try 2, Ruben 100" << COLOR_OFF << std::endl;
 		Bureaucrat ruben("Ruben", 100);
 		ruben.signForm(*form1);
 		ruben.executeForm(*form1);
@@ -43,7 +46,9 @@ int	main(void) {
 		ruben.signForm(*form3);
 		ruben.executeForm(*form3);
 	}
+	std::cout << std::endl;
 	{
+		std::cout << YELLOW << "Try 3, Alba 30" << COLOR_OFF << std::endl;
 		Bureaucrat alba("Alba", 30);
 		alba.signForm(*form1);
 		alba.executeForm(*form1);
@@ -52,7 +57,9 @@ int	main(void) {
 		alba.signForm(*form3);
 		alba.executeForm(*form3);
 	}
+	std::cout << std::endl;
 	{
+		std::cout << YELLOW << "Try 4, Sohee 1" << COLOR_OFF << std::endl;
 		Bureaucrat sohee("Sohee", 1);
 		sohee.signForm(*form1);
 		sohee.executeForm(*form1);
@@ -61,6 +68,7 @@ int	main(void) {
 		sohee.signForm(*form3);
 		sohee.executeForm(*form3);
 	}
+	std::cout << std::endl;
 	delete (form1);
 	delete (form2);
 	delete (form3);

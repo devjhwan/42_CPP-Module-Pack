@@ -41,7 +41,7 @@ $(OBJDIR): Makefile
 
 clean:
 	rm -rf $(OBJDIR)
-	rm -rf Home
+	rm -rf Happy
 
 fclean: clean
 	rm -f $(NAME)

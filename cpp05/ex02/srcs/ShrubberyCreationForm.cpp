@@ -53,7 +53,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	else if (executor.getGrade() > this->getMinGradeExec())
 		throw ShrubberyCreationForm::GradeTooLowException();
 	else {
-		std::ofstream outfile(this->getTarget());
+		std::ofstream outfile(this->getTarget().c_str());
 		outfile << "                     v .   ._, |_  ., " << std::endl;
 		outfile << "           `-._\\/  .  \\ /    |/_ " << std::endl;
 		outfile << "               \\\\  _\\, y | \\// " << std::endl;
