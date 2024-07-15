@@ -12,4 +12,5 @@ int main(void) {
 	Data *new_ptr = Serializer::deserialize(raw);
 	std::cout << new_ptr << std::endl;
 	std::cout << "data = " << new_ptr->GetData() << std::endl;
+	delete (ptr);
 }
