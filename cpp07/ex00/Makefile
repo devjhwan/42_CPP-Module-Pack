@@ -14,7 +14,7 @@ NAME=ex00
 
 SRCDIR=.
 OBJDIR=objs
-SRCS=
+SRCS=main.cpp
 OBJS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 DEPS=$(OBJS:.o=.d)
 
