@@ -3,13 +3,21 @@
 #include <vector>
 #include <exception>
 #include <ostream>
+#include <iterator>
 
 class Span {
 	public:
 		Span();
 		Span(unsigned int n);
+		Span(unsigned int n, int val);
 		Span(const Span &obj);
 		~Span();
+		template <typename InputIterator>
+		Span(InputIterator first, InputIterator last) {
+			while (first != last)
+				this->_vec.push_back(*(first++));
+			this->_maxSize = this->_vec.size();
+		}
 		Span &operator=(const Span &obj);
 		void addNumber(int value);
 		int shortestSpan(void);

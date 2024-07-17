@@ -4,6 +4,7 @@
 
 Span::Span(): _maxSize(0) {}
 Span::Span(unsigned int n): _maxSize(n) {}
+Span::Span(unsigned int n, int val): _vec(n, val), _maxSize(n) {}
 Span::Span(const Span &obj): _vec(obj._vec), _maxSize(obj._maxSize) {}
 Span::~Span() {}
 

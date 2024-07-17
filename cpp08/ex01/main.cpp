@@ -87,5 +87,13 @@ int main(void) {
 			std::cout << "shortest span = " << span.shortestSpan() << std::endl;
 			std::cout << "longest span = " << span.longestSpan() << std::endl;
 		}
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "Test constructor with range iterator" << std::endl;
+		int arr[] = {1, 2, 3, 4, 5};
+    	size_t size = sizeof(arr) / sizeof(arr[0]);
+		Span span(arr, arr + size);
+		std::cout << span << std::endl;
 	}
 }
