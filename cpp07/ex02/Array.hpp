@@ -29,7 +29,7 @@ class Array {
 		}
 		T&	operator[](int idx) {
 			if (idx < 0 || idx >= this->_size)
-				std::out_of_range("Index out of bounds");
+				throw std::out_of_range("Index out of bounds");
 			return this->_array[idx];
 		}
 		int	size() const {

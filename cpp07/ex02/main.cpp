@@ -1,5 +1,6 @@
 #include "Array.hpp"
 #include <iostream>
+#include <exception>
 
 template <typename T>
 void	printArr(Array<T> arr) {
@@ -35,7 +36,17 @@ int main(void) {
 		std::cout << "Exception Testing" << std::endl;
 
 		Array<int> arr(3);
-		
+		try {
+			arr[-1] = 0;
+		} catch (const std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+		try {
+			arr[4] = 0;
+		} catch (const std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << std::endl;
 	}
 	{
 		std::cout << "Testing with integer values" << std::endl;
